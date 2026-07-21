@@ -198,9 +198,7 @@ def preprocess_canvas(image_data_b64) -> np.ndarray:
     np_res = np.where(np_res > 100, 255, 0).astype(np.uint8)
     resized = Image.fromarray(np_res)
     
-    # DEBUG: Save the final processed image to see what the model actually receives
-    debug_path = r'C:\Users\Ronak Jain\.gemini\antigravity-ide\brain\75be460a-1002-4fa4-a052-17546b9b77fe\scratch\canvas_debug.png'
-    resized.save(debug_path)
+
     
     return np.array(resized, dtype=np.float32) / 255.0
 
